@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{height: 100%;}
+
+body{
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+.contenedor > * {
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 15px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(255, 193, 78, 0.719);
+}
+
+.header{
+    grid-area: header;
+    background-color: #6f20bd;
+}
+.header h1{
+    color: rgb(236, 74, 228);
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#navbar {
+    grid-area: nav;
+    background-color: #6f20bd;
+}
+nav a {
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    margin-top: 50px;
+    color: aliceblue;
+}
+
+#main {
+    grid-area: main;
+    background-color: #8e2bf1;
+}
+
+#sidebar {
+    grid-area: aside;
+    background-color: #6f20bd;
+}
+
+aside img{
+    display: flex;
+    float: left;
+    width: 200px;
+    margin-top: 80px;
+    border-radius: 25%;
+}
+
+#footer {
+    grid-area: footer;
+    background-color: #6f20bd;
+}
+
+footer a {
+    display: flex;
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    margin-left: 42.5%;
+    color: aliceblue;
+}
+
+.contenedor{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    "header" 100px 
+    "nav" 50px 
+    "main" auto "aside" 100px 
+    "footer" 100px;
+}
+
+#main img{
+    display: flex;
+    float: left;
+    width: 500px;
+    margin-top: 100px;
+    margin-left: 50px;
+    border-radius: 25%;
+}
+#main h3{
+    display: flex;
+    float: right;
+    margin-right: 300px;
+    margin-top: 100px;
+    width: 500px;
+    text-align: justify;
+    color: white;
+}
+
+@media (min-width:600px){
+    .contenedor{
+    grid-template: 
+    "header header" 100px 
+    "nav nav" 50px 
+    "aside main" auto 
+    "footer footer" 100px / 200px auto;
+    }
+}
+
+@media (min-width:900px){
+    .contenedor{
+    grid-template: 
+    "header header header" 100px 
+    "nav main aside" auto 
+    "footer footer footer" 100px / 200px auto 200px;
+    }
+}
